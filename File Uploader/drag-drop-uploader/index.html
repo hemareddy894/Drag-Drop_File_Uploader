@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop File Uploader</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/main.css">
+    <link rel="stylesheet" href="assets/styles/components.css">
+</head>
+<body>
+    <div class="container" id="app" aria-live="polite">
+        <header class="header">
+            <h1>File Uploader</h1>
+            <button id="mode-toggle" aria-label="Toggle dark mode">🌙</button>
+        </header>
+        <section class="upload-card" role="region" aria-labelledby="upload-title">
+            <h2 id="upload-title" class="visually-hidden">Upload files</h2>
+            <div id="drop-zone" class="drop-zone" tabindex="0" aria-label="File drop zone">
+                <p>Drag &amp; drop your files here or <span id="browse-text">browse</span></p>
+                <input type="file" id="file-input" multiple>
+            </div>
+            <div class="controls">
+                <span id="file-count">0 files</span>
+                <button id="clear-all" disabled>Clear All</button>
+            </div>
+        </section>
+        <section class="file-list-section">
+            <ul id="file-list" class="file-list" aria-live="assertive" aria-relevant="additions removals"></ul>
+        </section>
+        <footer class="footer">
+            <p>Total size: <span id="total-size">0 B</span></p>
+        </footer>
+    </div>
+    <script type="module" src="js/uploader.js"></script>
+</body>
+</html>
